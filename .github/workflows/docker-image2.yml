@@ -26,4 +26,4 @@ jobs:
         docker build . --file Dockerfile --tag 3017k/dcm_karan_3017
         docker login -u $USER -p $PASS
         
-        docker push 3017K/DCM_Karan_3017
+        docker push 3017k/dcm_karan_3017
