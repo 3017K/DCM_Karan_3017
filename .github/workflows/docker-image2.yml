@@ -23,7 +23,7 @@ jobs:
       run: | 
         echo $USER
         echo $PASS
-        docker build . --file Dockerfile --tag abcd
+        docker build . --file Dockerfile --tag 3017k/abcd
         docker login -u $USER -p $PASS
         
-        docker push abcd
+        docker push 3017k/abcd
