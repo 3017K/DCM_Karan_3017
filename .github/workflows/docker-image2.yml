@@ -1,0 +1,29 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      
+      env:
+        USER: ${{ secrets.USER }}
+        PASS: ${{ secrets.PASS }}
+ 
+      run: | 
+        echo $USER
+        echo $PASS
+        docker build . --file Dockerfile --tag 3017k/dcm_karan_3017
+        docker login -u $USER -p $PASS
+        
+        docker push 3017K/DCM_Karan_3017
